@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@theme {
+  --breakpoint-xsl: 20rem;  /* Custom breakpoint for xs:320px */
+    --breakpoint-xs: 31rem;  /* Custom breakpoint for xs:480px */
+  }

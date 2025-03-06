@@ -1,0 +1,38 @@
+version: '3'
+services:
+  backend:
+    build: 
+      context: ./backend  # Path to the backend folder
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app  # Sync backend files for live changes
+      - /app/node_modules
+    environment:
+      - MONGO_URI=mongodb+srv://Wasim105:Wasim2001@cluster0.y7ykccs.mongodb.net/connectverse
+    depends_on:
+      - mongo
+
+  frontend:
+    build: 
+      context: ./frontend  # Path to the frontend folder
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app  # Sync frontend files for live changes
+      - /app/node_modules
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:4000 
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
