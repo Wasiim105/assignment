@@ -28,8 +28,6 @@ In this project i have build UI with React (frontend) and Node.js (backend) with
 
 <h1>Project setup using Docker</h1>
 
-## Docker Setup
-
 ### Prerequisites
 - Docker installed on your machine.
 
@@ -50,7 +48,7 @@ In this project i have build UI with React (frontend) and Node.js (backend) with
 
 <h1>Project setup (Without Docker)</h1>
 
-##Frontend
+## Frontend
 
 1. Navigate to the frontend folder:
    ```bash
@@ -70,7 +68,7 @@ In this project i have build UI with React (frontend) and Node.js (backend) with
    ```bash
    npm run dev
 
-##Backend
+## Backend
 
 1. Navigate to the backend folder:
    ```bash
@@ -84,7 +82,7 @@ In this project i have build UI with React (frontend) and Node.js (backend) with
    ```bash
    npm run server
 
-##Notes:
+## Notes:
 Start the backend server first. Check the logs for:
    ```bash
    Server Started on http://localhost:4000
