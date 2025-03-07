@@ -128,7 +128,7 @@ const Signup = ({url}) => {
             <input
               type="text"
               name="name"
-              value={data.name}
+              value={data.name} required
               onChange={handleChange}
               placeholder="Enter your name"
               className="w-4/5 max-w-md mx-auto p-1 mt-1 border border-gray-300 rounded focus:border-blue-600 outline-none"
