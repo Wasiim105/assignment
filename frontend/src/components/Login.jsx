@@ -37,14 +37,19 @@ const Login = ({url}) => {
 
     try {
       const response = await axios.post(`${url}/api/auth/login`,data);
-      localStorage.setItem("token", response.data.token);
-      if (rememberMe) {
-        localStorage.setItem("rememberedEmail", email);
-      } else {
-        localStorage.removeItem("rememberedEmail");
+      
+      if(response.data.success){
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", email);
+        } else {
+          localStorage.removeItem("rememberedEmail");
+        }
+        localStorage.setItem("token", response.data.token);
+        navigate("/home", { state: data.email });
       }
-
-      navigate("/home", { state: data.email });
+      else{
+        setError(response.data.message)
+      }
 
     } catch (error) {
       setError("Invalid credential",error);
