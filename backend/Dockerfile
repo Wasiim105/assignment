@@ -8,6 +8,9 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install && npm rebuild bcrypt --build-from-source
 
+# If nodemon is a devDependency, install it globally
+RUN npm install -g nodemon
+
 # Copy all backend files
 COPY . .
 
