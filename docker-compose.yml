@@ -24,7 +24,7 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_API_URL=http://backend:4000 
+      - VITE_API_URL=http://54.221.74.72:4000 
 
   mongo:
     image: mongo
